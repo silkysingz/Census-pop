@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["sankey"]});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'From');
+      data.addColumn('string', 'To');
+      data.addColumn('number', 'Population');
+
+      // Add the data rows
+      data.addRows([
+        ['1973', 'Banjul', 39179],
+        ['1973', 'Kanifing', 39404],
+        ['1973', 'Brikama', 91013],
+        ['1973', 'Mansakonko', 42447],
+        ['1973', 'Kerewan', 93338],
+        ['1973', 'Kuntaur', 47669],
+        ['1973', 'Janjangbureh', 54232],
+        ['1973', 'Basse', 86167],
+
+        ['1983', 'Banjul', 44188],
+        ['1983', 'Kanifing', 101504],
+        ['1983', 'Brikama', 137245],
+        ['1983', 'Mansakonko', 55263],
+        ['1983', 'Kerewan', 112225],
+        ['1983', 'Kuntaur', 57594],
+        ['1983', 'Janjangbureh', 68410],
+        ['1983', 'Basse', 111388],
+
+        ['1993', 'Banjul', 42326],
+        ['1993', 'Kanifing', 228214],
+        ['1993', 'Brikama', 234917],
+        ['1993', 'Mansakonko', 55263],
+        ['1993', 'Kerewan', 156462],
+        ['1993', 'Kuntaur', 57594],
+        ['1993', 'Janjangbureh', 68410],
+        ['1993', 'Basse', 111388],
+
+        ['2003', 'Banjul', 35061],
+        ['2003', 'Kanifing', 322735],
+        ['2003', 'Brikama', 389594],
+        ['2003', 'Mansakonko', 72167],
+        ['2003', 'Kerewan', 172835],
+        ['2003', 'Kuntaur', 78491],
+        ['2003', 'Janjangbureh', 107212],
+        ['2003', 'Basse', 182586]
+      ]);
+
+      var options = {
+        width: 900,
+        height: 300,
+      };
+
+      var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="sankey_multiple" style="width: 2500px; height: 1500px;"></div>
+</body>
+</html>
